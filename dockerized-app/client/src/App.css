@@ -1,0 +1,22 @@
+.header {
+  background: #b0bec5;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+}
+
+.header a {
+  margin-left: 20px;
+  
+}
+
+
+.main {
+  padding: 10px;
+  background: #78909c;
+}
+
+.title {
+  margin-left:  30px;
+
+}
