@@ -20,7 +20,7 @@ jobs:
 
       - name: Set image id from the last build
         id: vars
-        run: echo "::set-output name=image_id::$(docker images | grep ${{ secrets.DOCKER_USER }}\/${{ secrets.DOCKER_IMAGE_SERVER_NAME }} | head -n1 | awk '{print $3}')"
+        run: echo "::set-output name=image_id::$(docker images | grep ${{ secrets.DOCKER_USER }}\/${{ secrets.DOCKER_IMAGE_CLIENT_NAME }} | head -n1 | awk '{print $3}')"
       
       - name: Retag image LATEST with image id from the last build
         run: docker tag ${{ steps.vars.outputs.image_id }} ${{ secrets.DOCKER_USER }}/${{ secrets.DOCKER_IMAGE_CLIENT_NAME }}:latest
