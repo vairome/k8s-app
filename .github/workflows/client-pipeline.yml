@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - "main"
-    paths:
-      - 'dockerized-app/client/**'
-      - '!dockerized-app/server/**'
-      - '!.github/**'
 
 jobs:
   build:
