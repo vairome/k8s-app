@@ -4,31 +4,24 @@ on:
   push:
     branches:
       - "main"
-     # Triggers the workflow on push and pull request event only for the master branch
+    paths:
+      - 'dockerized-app/client/**'
+      - '!dockerized-app/server/**'
+      - '!.github/**'
 
 jobs:
   
-  cancel_prev_builds:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cancel previous builds
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ github.token }}
-
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Login to Docker Hub
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }}
 
       - name: Build the Docker image
         run: docker build --tag ${{ secrets.DOCKER_USER }}/${{ secrets.DOCKER_IMAGE_CLIENT_NAME }}:${{ github.sha }} ./dockerized-app/client
-
-      - name: Set image id from the last build
-        id: vars
-        run: echo "::set-output name=image_id::$(docker images | grep ${{ secrets.DOCKER_USER }}\/${{ secrets.DOCKER_IMAGE_CLIENT_NAME }} | head -n1 | awk '{print $3}')"
 
       - name: Docker Push
         run: |
