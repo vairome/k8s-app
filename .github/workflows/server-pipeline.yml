@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - '!dockerized-app/client/**'
+      - 'dockerized-app/server/**'
+      - '!.github/**'
 
 jobs:
-  build_upload_server_image:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,7 +20,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_SECRET }}
 
       - name: Build the Docker image
-        run: docker build --tag ${{ secrets.DOCKER_USER }}/${{ secrets.DOCKER_IMAGE_SERVER_NAME }}:${{ github.sha }} ./dockerized-app/client
+        run: docker build --tag ${{ secrets.DOCKER_USER }}/${{ secrets.DOCKER_IMAGE_SERVER_NAME }}:${{ github.sha }} ./dockerized-app/server
 
       - name: Set image id from the last build
         id: vars

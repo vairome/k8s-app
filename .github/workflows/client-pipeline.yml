@@ -4,9 +4,13 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - 'dockerized-app/client/**'
+      - '!dockerized-app/server/**'
+      - '!.github/**'
 
 jobs:
-  build_upload_client_image:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
