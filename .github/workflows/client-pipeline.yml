@@ -16,17 +16,7 @@ jobs:
         with:
           access_token: ${{ github.token }}
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Find problems with Eslint
-        run: |
-          npm install
-          npm run lint
-
   build:
-    needs: test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
