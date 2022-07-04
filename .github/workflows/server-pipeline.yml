@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - "main"
+    paths:
+      - '!dockerized-app/client/**'
+      - '!k8s/**'
+      - 'dockerized-app/server/**'
+      - '!dockerized-app/nginx/**'
+      - '!.github/**'
+      - '!argo-cd/**'
       
 jobs:
   build:
