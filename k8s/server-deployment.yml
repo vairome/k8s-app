@@ -20,7 +20,7 @@ spec:
           env:
             - name: PGUSER
               value: postgres
-            - name: PGHOST
+            - name: pern-db-instance.cn0bi6opkfp1.us-east-1.rds.amazonaws.com
               value: postgres-cluster-ip-service
             - name: PGPORT
               value: "5432"
