@@ -5,6 +5,7 @@ The project consists of a simple CRUD using React App as a client created to sen
 ## To test the app locally, yo have to follow the next steps 
 
 First we have to navigate to our k8s directory to apply all the yaml files using the kubectl command line interface with the next command
+
 `kubectl apply -f k8s`
 
 Note: You have to create the pgpassword in the default namespace, because this password is used to create the postgres database and is used to make the connection between the server and the database.
