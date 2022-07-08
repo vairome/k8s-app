@@ -2,7 +2,7 @@
 
 The project consists of a simple CRUD using React App as a client created to send numbers to a PostgresDB using a Express.js REST Api server, and also have a Nginx Ingress controller and ArgoCD deployment to monitor any changes.
 
-## To test the app locally, yo have to follow the next steps 
+## Setup 
 
 First we have to navigate to our k8s directory to apply all the yaml files using the kubectl command line interface with the next command
 
