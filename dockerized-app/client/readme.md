@@ -17,7 +17,7 @@ Which you can find in the following link with the respective instructions: https
 This is a React App, which has port 3000 released to run the static website.
 
 In addition, this image is linked to a GitHub Actions that updates the static content of the website which triggers on any change push or pull request events from the master branch. It also contains a gitHubb Actions workflow to build and push a docker image tho Docker Hub, updating the tags to maintain previous version of the image.
-## How to use this API
+## How to use this React App
 
 ## Available Scripts
 
