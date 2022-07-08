@@ -15,7 +15,7 @@ this ingress gives you the possibility to access from the default port of your l
 
 ![K8s App](/Pern.jpeg?raw=true "PERN Stack K8s App")
 
-## Add the ArgoCD application
+### Add the ArgoCD application
 
 To add the ArgoCD to our application we have to install from the official documentation with the next command:
 
