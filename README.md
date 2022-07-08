@@ -19,10 +19,6 @@ kubectl port-forward -n argocd svc/argocd-server 8080:443
 kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
 echo MXVHbnhHMG1Ya3B1RWc3bw== | base 64 --decode
 
-# PERN Stack Dockerized Application
-
-The project consists of a simple CRUD using React App as a client created to send numbers to a PostgresDB using a Express.js REST Api server.
-
 To test the app locally, yo have to run 
 
 ### `docker compose up --build`
