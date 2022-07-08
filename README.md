@@ -7,18 +7,33 @@ The project consists of a simple CRUD using React App as a client created to sen
 First we have to navigate to our k8s directory to apply all the yml files using the kubectl command line interface with the next command `kubectl apply -f k8s`
 Note: You have to create the pgpassword in the default namespace, because this password is used to create the postgres database and is used to make the connection between the server and the database.
 
-Next we have to install the Ingress Nginx controller with the next command  `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.1/deploy/static/provider/cloud/deploy.yaml` this ingress gives you the possibility to access from the default port of your localhost.
+Next we have to install the Ingress Nginx controller with the next command
+
+`kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.1/deploy/static/provider/cloud/deploy.yaml` 
+
+this ingress gives you the possibility to access from the default port of your localhost.
 
 ![K8s App](/Pern.jpeg?raw=true "PERN Stack K8s App")
 
 ## Add the ArgoCD application
-   
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
-kubectl get pods n argocd
-kubectl get svc -n argocd
-kubectl port-forward -n argocd svc/argocd-server 8080:443
-kubectl get secret argocd-initial-admin-secret -n argocd -o yaml
-echo MXVHbnhHMG1Ya3B1RWc3bw== | base 64 --decode
+
+To add the ArgoCD to our application we have to install from the official documentation with the next command:
+
+`kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml`
+
+Next we have to make a port forward to our local host to gain access to the ArgoCD UI with the next command:
+
+`kubectl port-forward -n argocd svc/argocd-server 8080:443`
+
+Note: We have to get the secret for the admin user with the next two commands:
+
+`kubectl get secret argocd-initial-admin-secret -n argocd -o yaml`
+
+And pass it through a decode since this password is encrypted
+
+`echo password | base 64 --decode`
+
+When you gain access to the ArgoCD UI, we have to make a new application with the yaml located on the /argocd folder, the agent will be in charge of constantly monitoring any changes in the application and makes automatic deployments.
 
 ### 🚀 Quick reference
 
