@@ -35,6 +35,8 @@ And pass it through a decode since this password is encrypted
 
 When you gain access to the ArgoCD UI, we have to make a new application with the yaml located on the /argocd folder, the agent will be in charge of constantly monitoring any changes in the application and makes automatic deployments.
 
+![Argo App](/argo.jpeg?raw=true "Argo App")
+
 ### 🚀 Quick reference
 
 •	Maintained by: Byron Murillo
