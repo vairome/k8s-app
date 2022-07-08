@@ -1,4 +1,8 @@
-# PERN App
+# PERN Stack Application
+
+The project consists of a simple CRUD using React App as a client created to send numbers to a PostgresDB using a Express.js REST Api server.
+
+To test the app locally, yo have to run 
 
 ## React App Client
 
