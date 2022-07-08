@@ -2,7 +2,7 @@
 
 The project consists of a simple CRUD using React App as a client created to send numbers to a PostgresDB using a Express.js REST Api server.
 
-![K8s App](/Pern-app.jpeg?raw=true "PERN Stack K8s Application")
+![K8s App](/Pern-app.jpeg?raw=true "PERN Stack K8s App")
 
 kubectl apply -f k8s
 Kubectl get pods
