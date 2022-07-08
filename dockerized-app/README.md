@@ -4,6 +4,10 @@ The project consists of a simple CRUD using React App as a client created to sen
 
 To test the app locally, yo have to run 
 
+### `docker compose up --build`
+
+The Docker compose file, have an additional configuration for a Nginx server to deploy the React build into the port 80 as default to route the traffic more efficiently, and also have the configuration for the Postgres deploy, connected to the API to works correctly in a local environment.
+
 ## React App Client
 
 The project consists of a simple React App created to send numbers to a PostgresDB using a Express.js REST Api.
