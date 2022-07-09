@@ -1,5 +1,7 @@
 # PERN Stack K8s Application
 
+## Description
+
 The project consists of a simple CRUD using React App as a client created to send numbers to a PostgresDB using a Express.js REST Api server, and also have a Nginx Ingress controller and ArgoCD deployment to monitor any changes.
 
 ## Docker Images
