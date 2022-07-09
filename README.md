@@ -4,7 +4,7 @@
 
 The project consists of a simple CRUD using React App as a client created to send numbers to a PostgresDB using a Express.js REST Api server, and also have a Nginx Ingress controller and ArgoCD deployment to monitor any changes.
 
-![K8s Diagram](/k8s.png?raw=true "K8s Diagram")
+![K8s Diagram](/K8s.png?raw=true "K8s Diagram")
 
 ## Docker Images
 Docker Image client: https://hub.docker.com/repository/docker/vairome/pern-client
