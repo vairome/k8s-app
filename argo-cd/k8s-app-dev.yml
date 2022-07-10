@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: pern-argo-application-dev
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/vairome/k8s-app.git
+    targetRevision: HEAD
+    path: k8s
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: pern-app-prod-dev
+  syncPolicy: 
+    syncOptions: 
+    - CreateNamespace=true
+    automated: 
+      prune: true  
