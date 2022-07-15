@@ -11,7 +11,7 @@ spec:
     path: k8s
   destination:
     server: https://kubernetes.default.svc
-    namespace: pern-app-prod-dev
+    namespace: pern-app-dev
   syncPolicy: 
     syncOptions: 
     - CreateNamespace=true
