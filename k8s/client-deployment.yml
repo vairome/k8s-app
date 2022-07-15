@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: client
-          image: vairome/pern-client 
+          image: vairome/pern-client:bd89486f0a875d235d254f0d6de6b610410ad367
           ports:
             - containerPort: 3000
