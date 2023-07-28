@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Fragment>
         <header className="header">
-          <div className="title">AWS PERN APP FINAL</div>
+          <div className="title">TEST APP 28-7-2023</div>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other page</Link>
         </header>
