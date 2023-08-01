@@ -27,7 +27,7 @@ pgClient.on("connect", client => {
 
 //Express route definitions
 app.get("/", (req, res) => {
-  res.send("Hi 31/7/2023");
+  res.send("Hi 01/8/2023");
 });
 
 // get the values
